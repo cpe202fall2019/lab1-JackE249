@@ -45,6 +45,11 @@ class TestLab1(unittest.TestCase):
         """number outside of list (less than)"""
         self.assertEqual(bin_search(-1, 0, len(list_val) - 1, list_val), None)
 
+        with self.assertRaises(ValueError):  # used to check for exception
+            bin_search(4,0,3,None)
+
+        self.assertEqual(bin_search(8, 0, len(list_val)-1, list_val), 6)
+
 
 
 
